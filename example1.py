@@ -8,5 +8,9 @@ def largetNumber(sampleArr):
                 largest = num
     return largest
 
-
 print(largetNumber(sampleArr))
+##################### list comprehension ######################################
+
+largest2 = max([x for x in sampleArr])
+print(largest2)
+
