@@ -1,14 +1,13 @@
-sampleArr = [10, 20, 15, 5, 12, 25, 13]
+sampleArr = [10, 20, 15, 5, 12, 25, 13,45]
 
-def largetNumber(sampleArr):
+def largestNumber(sampleArr):
     largest = 0
-    for i in range(len(sampleArr)):
-            num = sampleArr[i]
-            if num > largest:
-                largest = num
+    for i in sampleArr:
+            if i > largest:
+               largest = i
     return largest
 
-print(largetNumber(sampleArr))
+print(largestNumber(sampleArr))
 ##################### list comprehension ######################################
 
 largest2 = max([x for x in sampleArr])
