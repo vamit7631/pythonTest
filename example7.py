@@ -23,16 +23,6 @@ print(result3)
 
 
 
-# a,b,c  = (0,1,2,3,(4,5,6),7,8)[::3]
-
-# print(a)
-# print(b)
-# print(c)
-# please find value of abc
-
-
-
-
 
 
 #input provided by the user not in function
