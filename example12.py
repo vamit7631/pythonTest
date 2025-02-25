@@ -1,5 +1,6 @@
-arr1 = ["apple", "ape", "april"] 
-arr2 = ["apple", "banana", "apricot"]
+# arr1 = ["apple", "ape", "april"] 
+arr2 = ["flower","flow","flight"]
+# arr3 = ["apple", "banana", "apricot"]
 
 
 def find_longest_prefix(words):
@@ -7,12 +8,15 @@ def find_longest_prefix(words):
         return ""
     
     min_length = min(len(word) for word in words)
+    print(min_length,"=========1")
     prefix = ""
     
     for i in range(min_length):
         chars = {word[i] for word in words}
+        print(chars,"=========2")
         if len(chars) == 1:
             prefix += words[0][i]
+            print(prefix,"=========3")
         else:
             break
     
@@ -22,4 +26,5 @@ def find_longest_prefix(words):
 
 
 print(find_longest_prefix(arr1)) # output =  "ap"
-print(find_longest_prefix(arr2)) #  output =  ""
+print(find_longest_prefix(arr2)) #  output =  "fl"
+print(find_longest_prefix(arr3)) #  output =  ""

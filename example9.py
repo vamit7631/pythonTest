@@ -27,27 +27,36 @@
 # Explanation: The arrays we are merging are [] and [1].
 # The result of the merge is [1].
 # Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
-
-class Solution:
-    def mergeArray(self, nums1, m, nums2, n):
-        p1 = m - 1
-        p2 = n - 1
-
-        for p in range(m + n - 1, -1, -1):
-            if p2 < 0:
-                break
-            
-            if p1 >= 0 and nums1[p1] > nums2[p2]:
-                nums1[p] = nums1[p1]
-                p1 -= 1
-            else:
-                nums1[p] = nums2[p2]
-                p2 -= 1
-            
-        return nums1
-
-
-solution = Solution()
-
-print(solution.mergeArray([1,2,3,0,0,0], 3, [2,5,6], 3))
         
+nums1 = [1,2,3,0,0,0]
+m = 3
+nums2 = [2,5,6]
+n = 3
+
+def merge(nums1, m, nums2, n):
+    nums1[:] = sorted(nums1[:m] + nums2)
+
+merge(nums1, m, nums2, n)
+print(nums1)  # Output: [1,2,2,3,5,6]
+
+
+
+
+###########################################################
+
+
+def merge(nums1, m, nums2, n):
+    # Base cases
+    if n == 0:
+        return  # No need to merge if nums2 is empty
+    if m == 0:
+        nums1[:n] = nums2  # If nums1 has no elements, copy nums2 directly
+        return
+    
+    # Compare the last elements and place the larger one at the end
+    if nums1[m - 1] > nums2[n - 1]:
+        nums1[m + n - 1] = nums1[m - 1]
+        merge(nums1, m - 1, nums2, n)
+    else:
+        nums1[m + n - 1] = nums2[n - 1]
+        merge(nums1, m, nums2, n - 1)
