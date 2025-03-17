@@ -15,9 +15,10 @@ result.say_hello()
 
 class Teacher:
     name = "Ankit"
+    age = 34
     @classmethod
     def say_hello_teacher2(cls):
-        print(f"Hello Madam, my name is {cls.name}")
+        print(f"Hello Madam, my name is {cls.name} and my age is {cls.age}")
 
 result2 = Teacher()
 result2.say_hello_teacher2()

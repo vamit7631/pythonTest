@@ -49,7 +49,7 @@ friends = [
 # Define grade ranking order
 grades = {"A+": 0, "A": 1, "B+": 2, "B": 3, "C": 4}
 
-friends.sort(key=lambda x: grades[x["grade"]])
+friends.sort(key = lambda x: grades[x["grade"]])
 
 # Print sorted output
 for friend in friends:

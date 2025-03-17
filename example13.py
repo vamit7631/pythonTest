@@ -8,7 +8,9 @@ val1 = 2
 def removeElement(nums, val):
     result = [num for num in nums if num != val ]
     print(nums,"=================", result)
-    result += ["_"] * (len(nums) - len(result))  # Fill remaining space with '_'
+    padding = ["_"] * (len(nums) - len(result))  # Fill remaining space with '_'
+    print(padding,"==========padding")
+    result = result + padding
     return result
 
 
