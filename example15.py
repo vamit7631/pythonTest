@@ -5,6 +5,7 @@ def group_anagrams(input):
     anObj = {}
     for word in input:
         result = "".join(sorted(word))
+        print(result)
         if result in anObj:
             anObj[result].append(word)
         else:
