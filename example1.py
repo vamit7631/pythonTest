@@ -13,3 +13,7 @@ print(largestNumber(sampleArr))
 largest2 = max([x for x in sampleArr])
 print(largest2)
 
+##################### sort method ######################################
+
+largest3 = sorted(sampleArr)
+print(largest3[-1])

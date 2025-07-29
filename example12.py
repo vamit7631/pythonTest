@@ -13,7 +13,7 @@ def find_longest_prefix(words):
     
     for i in range(min_length):
         chars = {word[i] for word in words}
-        print(chars,"=========2")
+        print(chars,"=========2===========", words[0][i])
         if len(chars) == 1:
             prefix = prefix + words[0][i]
             print(prefix,"=========3")
