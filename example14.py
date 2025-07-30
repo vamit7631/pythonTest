@@ -1,15 +1,48 @@
-nums = [1,1,2]
-nums1 = [0,0,1,1,1,2,2,3,3,4]
+# 242. Valid Anagram
 
-def removeDuplicates(nums):
-    result = sorted(set(nums))
-    print(result,"==============1")
-    k = len(result)
-    nums[:k] = result
-    nums[k:] = ['_'] * (len(nums) - k)
-    return k
+# Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+ 
+
+# Example 1:
+
+# Input: s = "anagram", t = "nagaram"
+
+# Output: true
+
+# Example 2:
+
+# Input: s = "rat", t = "car"
+
+# Output: false
+
+ 
+input1 = "anagram" 
+input2 = "nagaram"
+# input1 = "rat"
+# input2 = "car"
 
 
+##################### sort method ######################################
 
-print(removeDuplicates(nums), nums) # 2 [1, 2, '_']
-print(removeDuplicates(nums1), nums1) # 5 [0, 1, 2, 3, 4, '_', '_', '_', '_', '_']
+def testfunction(input1, input2):
+    input1 = "".join(sorted(input1))
+    input2 = "".join(sorted(input2))
+    if input1 == input2:
+        return True
+    else:
+        return False
+
+
+print(testfunction(input1, input2))
+
+
+##################### count method ######################################
+
+from collections import Counter
+
+def is_anagram(input1, input2):
+    return Counter(input1) == Counter(input2)
+
+# Example usage
+print(is_anagram(input1, input2))  
